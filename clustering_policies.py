@@ -8,10 +8,8 @@ from sklearn.cluster import AgglomerativeClustering
 from scipy.cluster.hierarchy import dendrogram, fcluster, linkage
 from pathlib import Path
 
-
 def plot_dendrogram(model, categories, **kwargs):
 
-    # create the counts of samples under each node
     counts = np.zeros(model.children_.shape[0])
     n_samples = len(model.labels_)
     for i, merge in enumerate(model.children_):
@@ -30,8 +28,6 @@ def plot_dendrogram(model, categories, **kwargs):
     # Plot the corresponding dendrogram
     dendrogram(linkage_matrix, labels=categories, **kwargs)
 
-
-
 def compute_distance_seq_with_issue(mat, metadata):
 
     issues = set(list(metadata[:, 1]))
@@ -41,7 +37,7 @@ def compute_distance_seq_with_issue(mat, metadata):
     distance_matrix = np.zeros([len(categories), len(categories)])
 
     for cat1, cat2 in combinations(issues, 2):
-        # print(map_label_name[int(issue)])
+
         ind1 = [i[0] for i in np.argwhere(metadata == cat1)]
         ind2 = [i[0] for i in np.argwhere(metadata == cat2)]
         embeddings1 = mat[ind1,:]
@@ -85,12 +81,6 @@ def compute_distance_seq_with_issue(mat, metadata):
 
 
 def compute_distances():
-
-    # model_emb = f"./embeddings/{lang}/paraphrase-multilingual-mpnet-base-v2/embeddings.p"
-
-    # embs = read_embeddings(model_emb, do_whiten=do_whiten)
-    # metadata = pickle.load(open("./embeddings/de/metadata.p", "rb"))
-
     df = pd.read_csv("./data/de/manifestos_2021.csv", index_col=0)
     df=df.dropna()
     df = df[df["label"]!="H"]
@@ -109,6 +99,6 @@ def compute_distances():
 
 
 if __name__ == '__main__':
-    df = pd.read_csv("./data/codebook_categories_MPDS2020a.csv")
+    df = pd.read_csv("./data/codebook_categories_MPDS2020a.csv") #Info about the labels from MARPOR 
     map_labels = dict(zip([str(i) for i in df.code], df.title))
     compute_distances()

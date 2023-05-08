@@ -1,0 +1,112 @@
+equality
+503.0 - Equality: Positive
+
+military and peace
+105.0 - Military: Negative
+106.0 - Peace
+104.0 - Military: Positive
+
+democracy and constitutionalism
+304.0 - Political Corruption
+202.4 - Direct Democracy: Positive
+202.1 - Democracy General: Positive
+204 - Constitutionalism: Negative
+202.3 - Representative Democracy: Positive
+203 - Constitutionalism: Positive
+202.2 - Democracy General: Negative
+202 - Democracy
+
+foreign relations, eu and protectionism
+109.0 - Internationalism: Negative
+108.0 - European Community/Union: Positive
+407.0 - Protectionism: Negative
+406.0 - Protectionism: Positive
+107.0 - Internationalism: Positive
+110.0 - European Community/Union: Negative
+
+market regulation and nationalisation
+413.0 - Nationalisation
+412.0 - Controlled Economy
+401.0 - Free Market Economy
+403.0 - Market Regulation
+
+political authority, civic mindedness and anti-imperialism
+606.2 - Civic Mindedness: Bottom-Up Activism
+305.1 - Political Authority: Party Competence
+103.1 - Anti-Imperialism: State Centred Anti-Imperialism
+415.0 - Marxist Analysis
+602.1 - National Way of Life General: Negative
+601.1 - National Way of Life General: Positive
+305.6 - Transition: Rehabilitation and Compensation
+305.2 - Political Authority: Personal Competence
+305 - Political Authority
+305.3 - Political Authority: Strong government
+305.5 - Transition: Pre-Democratic Elites: Negative
+606 - Civic Mindedness: Positive
+103 - Anti-Imperialism
+103.2 - Anti-Imperialism: Foreign Financial Influence
+
+immigration, multiculturalism and human rights
+601.2 - National Way of Life: Immigration: Negative
+201.2 - Human Rights
+705.0 - Underprivileged Minority Groups
+608.1 - Multiculturalism General: Negative
+608.2 - Multiculturalism: Immigrants Assimilation
+101.0 - Foreign Special Relationships: Positive
+607.1 - Multiculturalism General: Positive
+607.2 - Multiculturalism: Immigrants Diversity
+602.2 - National Way of Life: Immigration: Positive
+201 - Freedom and Human Rights
+607.3 - Multiculturalism: Indigenous rights: Positive
+607 - Multiculturalism: Positive
+601 - National Way of Life: Positive
+602 - National Way of Life: Negative
+608 - Multiculturalism: Negative
+102 - Foreign Special Relationships: Negative
+
+labour groups and welfare state
+505.0 - Welfare State Limitation
+704.0 - Middle Class and Professional Groups
+701.0 - Labour Groups: Positive
+702.0 - Labour Groups: Negative
+504.0 - Welfare State Expansion
+
+sustainability and agriculture
+501.0 - Environmental Protection
+703.1 - Agriculture and Farmers: Positive
+416.2 - Sustainability: Positive
+703.2 - Agriculture and Farmers: Negative
+703 - Agriculture and Farmers: Positive
+
+education and technology
+411.0 - Technology and Infrastructure: Positive
+506.0 - Education Expansion
+507 - Education Limitation
+
+culture and civic mindedness
+502.0 - Culture: Positive
+606.1 - Civic Mindedness General: Positive
+
+government admin, (de)centralization and economic planning
+303.0 - Governmental and Administrative Efficiency
+405.0 - Corporatism/Mixed Economy
+416.1 - Anti-Growth Economy: Positive
+409.0 - Keynesian Demand Management
+302.0 - Centralisation
+410.0 - Economic Growth: Positive
+301.0 - Decentralization
+402.0 - Incentives: Positive
+408.0 - Economic Goals
+404.0 - Economic Planning
+414.0 - Economic Orthodoxy
+416 - Anti-Growth Economy: Positive
+
+law and order and traditional morality
+605.2 - Law and Order: Negative
+604.0 - Traditional Morality: Negative
+706.0 - Non-economic Demographic Groups
+201.1 - Freedom
+605.1 - Law and Order: Positive
+603.0 - Traditional Morality: Positive
+605 - Law and Order: Positive
+
