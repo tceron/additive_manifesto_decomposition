@@ -80,8 +80,9 @@ def get_embeddings(df, output_dir, lang, type_model=None):
 
 def get_representations_datasets():
 
-    models = ["fasttext_emb",  "paraphrase-multilingual-mpnet-base-v2",
-              "bert-base-german-cased", "tceron/sentence-transformers-party-similarity-by-domain"]
+    models = ["fasttext_emb", "paraphrase-multilingual-mpnet-base-v2",
+              "bert-base-german-cased", "tceron/sentence-transformers-party-similarity-by-domain"
+            ]
 
     for m in models:
         print(m)
