@@ -32,6 +32,9 @@ For running the similarity between parties based on text similarity, run the lin
     python3 party_similarity.py
 
 
+Finally, you can run the correlation analysis with Mantel and Pearson with the line below: 
+
+    python3 analyse_results.py
 
 
 Citation below:  
