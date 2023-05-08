@@ -27,10 +27,14 @@ In order to extract the sentence representations for the analysis later, run:
 
     python3 get_representations.py
 
+For running the similarity between parties based on text similarity, run the line below. It will run both the similarity with the annotated and predicted data. You can check the results in "./results/de/predicted" and "./results/de/annotated". We make the predictions of all models available in the "predictions" folder even though the code runs only on the "./classifier/predictions" of the best performing model - RoBERTa xml + MLP. The code the classifiers can be found in "./classifiers". 
+
+    python3 party_similarity.py
 
 
 
-    Citation below:  
+
+Citation below:  
 
 @inproceedings{ceron-additive-2023,
     title = "Additive manifesto decomposition: A policy domain aware method for understanding party positioning",
