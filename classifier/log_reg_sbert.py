@@ -29,21 +29,23 @@ def load_model(st_model):
     model = SentenceTransformer(st_model, device='cuda')
     return model
 
-def load_data(args):
-    train_df = pd.read_csv(f"./data/{args.data_dir}/train.csv", index_col=0)
-    train_df = train_df[["text", "label"]]
-    # train_df["label"] = [map_labels[i] for i in train_df.label.tolist()]
+def load_data(train_data):
+    df = pd.DataFrame()
+    for country in data[train_data]:
+        files = glob.glob(f"./data/{country}/*.csv")
+        for f in files:
+            tmp = pd.read_csv(f)
+            df = pd.concat([df, tmp])
 
-    # Load the test dataset into a pandas dataframe.
-    eval_df = pd.read_csv("./data/test.csv", index_col=0)
-    eval_df = eval_df[["text", "label"]]
-    eval_df["label"]=[map_labels[i] for i in eval_df.label.tolist()]
-    print(eval_df)
+    df["label"] = [map_labels[i] for i in df.cmp_code.tolist()]
+    df = df.sample(frac=1, random_state=42).reset_index(drop=True)
 
-    x_eval = eval_df["text"].values.tolist()
-    y_eval = eval_df["label"].values.tolist()
-    x_train = train_df["text"].values.tolist()
-    y_train = train_df["label"].values.tolist()
+    train, val = train_test_split(df, test_size=0.2, stratify=df["label"], random_state=42)
+
+    x_eval = val["text"].values.tolist()
+    y_eval = val["label"].values.tolist()
+    x_train = train["text"].values.tolist()
+    y_train = train["label"].values.tolist()
 
     return x_train, x_eval, y_train, y_eval
 
@@ -81,7 +83,6 @@ def encode_sentences(sentences, model):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data_dir", type=str, help="german_speaking")
     parser.add_argument("--max_seq_length", type=int, default=128)
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
@@ -91,14 +92,15 @@ if __name__ == '__main__':
 
     map_labels, label2name, name2label = read_new_issues()
 
-    for data in ["german_speaking", "germany"]:
-        print(data)
+    data = {"dach":["de", "ch", "au"], "de":["de"]}
 
-        args.data_dir = data
-        output_dir = f"./outputs/{args.data_dir}"
+    for train_data in data.keys():
+
+        output_dir = f"./outputs/{train_data}"
+        print(output_dir)
         Path(output_dir).mkdir(parents=True, exist_ok=True)
 
-        x_train, x_eval, y_train, y_eval = load_data(args)
+        x_train, x_eval, y_train, y_eval = load_data(train_data)
         y_train = y_train[1:]
         y_eval = y_eval[1:]
 
